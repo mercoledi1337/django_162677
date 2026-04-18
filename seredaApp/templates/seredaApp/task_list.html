@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista zadań</title>
+</head>
+
+<body>
+<h1>Lista zadań</h1>
+
+{% if seredaApp %}
+<ul>
+    {% for task in seredaApp %}
+    <li>
+        <a href="{% url 'task_detail' task.pk %}">
+            {{ task.title }}
+        </a>
+        | status: {{ task.status }}
+        | termin: {{ task.due_date }}
+        | projekt: {{ task.project }}
+    </li>
+    {% endfor %}
+</ul>
+
+{% else %}
+<p>Brak zadań.</p>
+{% endif %}
+
+</body>
+</html>
