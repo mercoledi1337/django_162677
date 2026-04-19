@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Project, Task, Tag
 
+
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
     list_display = ("name", "created_at", "is_active")
@@ -10,7 +11,6 @@ class ProjectAdmin(admin.ModelAdmin):
 @admin.register(Tag)
 class TagAdmin(admin.ModelAdmin):
     search_fields = ("name",)
-
 
 
 @admin.register(Task)
