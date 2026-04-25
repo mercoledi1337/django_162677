@@ -8,9 +8,9 @@
     <a href="{% url 'task_add' %}" class="btn btn-outline-primary btn-sm">Dodaj zadanie</a>
 </p>
 
-{% if tasks %}
+{% if seredaApp %}
     <ul>
-        {% for task in tasks %}
+        {% for task in seredaApp %}
             <li>
                 <a href="{% url 'task_detail' task.pk %}" class="btn btn-outline-secondary btn-sm" style="width: 100ch;">
                     {{ task.title }}
